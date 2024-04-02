@@ -1,4 +1,5 @@
 ﻿using LouvreCartes.Data;
+using LouvreCartes.Gameplay;
 
 namespace LouvreCartes
 {
@@ -10,8 +11,11 @@ namespace LouvreCartes
 
             GameData data = DataLoader.LoadData();
 
-            Console.WriteLine("Extracted data :");
-            Console.WriteLine(data);
+            Calcul test = new Calcul();
+            test.SimulateOneDay();
+
+            //Console.WriteLine("Extracted data :");
+            //Console.WriteLine(data);
 
             Console.ReadLine();
         }

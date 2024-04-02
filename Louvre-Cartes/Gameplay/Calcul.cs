@@ -32,63 +32,72 @@ namespace LouvreCartes.Gameplay
             Random random = new Random();
 
             // Simulate games
-            for (int i = 0; i < totalGames; i++)
-            {
-                foreach (Card card in cards)
-                {
-                    List<Player> playersInAuction = new List<Player>(players);
-
-                    // Each player makes a bid
-                    Dictionary<Player, int> bids = new Dictionary<Player, int>();
-                    foreach (Player player in players)
-                    {
-                        int bid = player.Bid(card);
-                        bids.Add(player, bid);
-                    }
-
-                    // Determine the player with the highest bid
-                    Player highestBidder = bids.OrderByDescending(kv => kv.Value).First().Key;
-                    int highestBid = bids[highestBidder];
-
-                    // The highest bidder wins the card and pays the bid amount
-                    highestBidder.Gold -= highestBid;
-
-                    // Remove the highest bidder from the list of players in the auction
-                    playersInAuction.Remove(highestBidder);
-
-                    // All other players lose their bids
-                    foreach (Player player in playersInAuction)
-                    {
-                        player.Gold -= bids[player];
-                    }
-
-                    // Assign the card to the highest bidder
-                    highestBidder.Cards.Add(card);
-                }
-
-                // At the end of the day, players recover their gold in transit and each gain 30 gold coins
-                foreach (Player player in players)
-                {
-                    player.Gold += 30;
-                }
-
-                //foreach (Player player in players)
-                //{
-                //    player.Gold += player.GoldInTransit;
-                //    player.GoldInTransit = 0;
-                //}
-            }
+            // ...
 
             CalculatePlayersPoints(players);
         }
 
-        public void SimulateOneDay()
+        public void SimulateOneDay() // (List<Player> players) //List<Card> threeCards
         {
-            for (int i = 0; i < 2; i++)
+            List<Player> players = new List<Player>();
+            for (int i = 0; i < 3; i++)
             {
+                players.Add(new Player());
+                players[i].Gold = 140;
+            }
+            Console.WriteLine($"Nombre players : {players.Count}");
+
+            // Init leur mise de côté
+            Dictionary<Player, int> playersBidSaved = new Dictionary<Player, int>();
+            foreach (Player player in players)
+            {
+                playersBidSaved.Add(player, 0);
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                // Les joueurs font leurs paris
+                int[] bids = new int[players.Count];
+                
+                Random random = new Random();
+                for (int j = 0; j < players.Count; j++)
+                {
+                    int bid = random.Next(0, 70) + random.Next(1,6) * 10;
+                    //int bid = player.Bid(threeCards[i]);
+                    bids[j] = bid;
+                    Console.WriteLine($"Mise du joueur {j} : {bids[j]}");
+                }
+
+                // On regarde qui a parié le +
+                int highestBid = bids.Max();
+                int highestBidPlayerIndex = Array.IndexOf(bids, highestBid);
+                Console.WriteLine($"Plus gross mise : joueur {highestBidPlayerIndex} : {highestBid}");
+
+                // On ajoute à la mise de côté les golds des joueurs qui n'ont pas gagné
+                for (int j = 0; j < players.Count; j++)
+                {
+                    if (j != highestBidPlayerIndex)
+                    {
+                        playersBidSaved[players[j]] += bids[j];
+                        Console.WriteLine($"Gold mise de côté du joueur {j} : {bids[j]}");
+                    }
+                    // On retire leurs golds
+                    players[j].Gold -= bids[j];
+                }
+
+                // On offre la carte au joueur qui a gagné
+                //...
 
             }
+
+            //Fin de journée: on redonne les Golds aux players qui ont misé + les 30 golds
+            foreach (Player player in players)
+            {
+                player.Gold += playersBidSaved[player] + 30;
+                Console.WriteLine($"Mise retrouvée : {playersBidSaved[player]} - +30  {playersBidSaved[player]+30} - Players Gold : {player.Gold}");
+            }
         }
+
 
 
 

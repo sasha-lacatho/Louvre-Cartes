@@ -19,31 +19,31 @@ namespace LouvreCartes.Data
                 switch (value)
                 {
                     case 0:
-                        Criteria = new MinimumPrestigeCriteria();
+                        Criteria = new MinimumPrestigeCriteria(0, 0);
                         break;
 
                     case 1:
-                        Criteria = new LocationCriteria();
+                        Criteria = new LocationCriteria(new string[] {});
                         break;
 
                     case 2:
-                        Criteria = new DateCriteria();
+                        Criteria = new DateCriteria(0, false, 0);
                         break;
 
                     case 3:
-                        Criteria = new ExactPrestigeCriteria();
+                        Criteria = new ExactPrestigeCriteria(new int[] {});
                         break;
 
                     case 4:
-                        Criteria = new TypeCriteria();
+                        Criteria = new TypeCriteria(String.Empty, 0);
                         break;
 
                     case 5:
-                        Criteria = new HeightCriteria();
+                        Criteria = new HeightCriteria(0, false);
                         break;
 
                     case 6:
-                        Criteria = new NumberCriteria();
+                        Criteria = new NumberCriteria(0);
                         break;
                 }
                 #endregion

@@ -37,17 +37,8 @@ namespace LouvreCartes.Gameplay
             CalculatePlayersPoints(players);
         }
 
-        public void SimulateOneDay(Game game) // (List<Player> players) //List<Card> threeCards
+        public void SimulateOneDay(Game game, List<Card> cards) // (List<Player> players) //List<Card> threeCards
         {
-            /* Exemple
-            for(int day = 0; day < Game.NUMBER_OF_DAYS; day++)
-            {
-                Card card0 = game.Cards[day, 0];
-                Card card1 = game.Cards[day, 1];
-                Card card2 = game.Cards[day, 2];
-            }
-            */
-
             //boucle de Bid
             for (int i = 0; i < 3; i++)
             {
@@ -57,8 +48,7 @@ namespace LouvreCartes.Gameplay
                 Random random = new Random();
                 for (int j = 0; j < game.Players.Length; j++)
                 {
-                    int bid = random.Next(0, 70) + random.Next(1,6) * 10;
-                    //int bid = player.Bid(threeCards[i]);
+                    int bid = game.Players[j].Bid(cards[i]);
                     bids[j] = bid;
                     Console.WriteLine($"Mise du joueur {j} : {bids[j]}");
                 }
@@ -78,6 +68,9 @@ namespace LouvreCartes.Gameplay
                     }
                     // On retire leurs golds
                     game.Players[j].Gold -= bids[j];
+                    Console.WriteLine($"-- Players Gold {j} : {game.Players[j].Gold}");
+                    Console.WriteLine();
+
                 }
 
                 // On offre la carte au joueur qui a gagné
@@ -89,7 +82,7 @@ namespace LouvreCartes.Gameplay
             foreach (Player player in game.Players)
             {
                 player.Gold += player.SavedGold + 30;
-                Console.WriteLine($"Mise retrouvée : {player.SavedGold} - +30  {player.SavedGold + 30} - Players Gold : {player.Gold}");
+                Console.WriteLine($"--- Mise retrouvée : {player.SavedGold} --- +30 golds : {player.SavedGold + 30} --- Players Gold : {player.Gold}");
             }
         }
 

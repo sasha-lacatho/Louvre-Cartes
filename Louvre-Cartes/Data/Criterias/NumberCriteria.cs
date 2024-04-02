@@ -8,13 +8,24 @@ namespace LouvreCartes.Data
 {
     public class NumberCriteria : MissionCriteria
     {
-        public int NumberNeeded;
-        public bool IsNeededToBeExact;
+        public int ExactNumber;
+        private int _currentNumber;
 
-        public NumberCriteria(int exactNumber, bool isNeededToBeExact)
+        public NumberCriteria(int exactNumber)
         {
-            NumberNeeded = exactNumber;
-            IsNeededToBeExact = isNeededToBeExact;
+            ExactNumber = exactNumber;
+            _currentNumber = 0;
+        }
+
+        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
+        {
+            if(_currentNumber < ExactNumber)
+            {
+                _currentNumber++;
+                return true;
+            }
+
+            return false;
         }
     }
 }

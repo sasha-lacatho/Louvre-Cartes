@@ -16,5 +16,10 @@ namespace LouvreCartes.Data
             Type = type;
             MinimumNumber = minimumNumber;
         }
+        
+        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
+        {
+            return Type == type;
+        }
     }
 }

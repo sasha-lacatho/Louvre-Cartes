@@ -16,5 +16,15 @@ namespace LouvreCartes.Data
             Height = height;
             IsInferior = isInferior;
         }
+
+        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
+        {
+            if((IsInferior && height < Height) || (!IsInferior && height > Height))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

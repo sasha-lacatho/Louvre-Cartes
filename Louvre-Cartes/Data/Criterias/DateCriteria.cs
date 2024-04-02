@@ -18,5 +18,15 @@ namespace LouvreCartes.Data
             IsInferior = isInferior;
             MinimumNeeded = minimumNeeded;
         }
+
+        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
+        {
+            if((IsInferior && date < MinimumDate) || (!IsInferior && date > MinimumDate))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

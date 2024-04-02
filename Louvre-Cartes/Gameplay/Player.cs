@@ -52,20 +52,32 @@ namespace LouvreCartes.Gameplay
 
         public int Bid(Card card)
         {
-            // A modif
             Random random = new Random();
-            int minBid = IsImportantForMissions(card) ? 20 + card.Prestige * 10 : -10 + card.Prestige * 10;
-            int maxBid = IsImportantForMissions(card) ? 70 + card.Prestige * 10 : 40 + card.Prestige * 10;
-            return random.Next(minBid, maxBid + 1);
+            int bid = 0;
+
+            if(IsImportantForMissions(card))
+            {
+                bid = random.Next(20, 70) + card.Prestige * 10;
+            }
+            else
+            {
+                bid = random.Next(-10, 40) + card.Prestige * 10;
+            }
+
+            Console.WriteLine($"Is important for missions ? : {IsImportantForMissions(card)}");
+
+            return bid;
         }
 
         public bool IsImportantForMissions(Card card)
         {
-            // A modif
-            Random random = new Random();
-            return random.Next(2) == 0; // Random simulation
+            foreach (Mission mission in Missions)
+            {
+                if(mission.TypeMission.Criteria.CheckIsImportant(card.Prestige, card.Type, card.Location, card.Date, card.Height))
+                    return true;
+            }
+
+            return false;
         }
-
-
     }
 }

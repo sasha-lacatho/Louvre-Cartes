@@ -13,7 +13,7 @@ namespace LouvreCartes.Data
         public string Type;
         public string Location;
         public int Date;
-        public string Height;
+        public float Height;
 
         public override string ToString()
         {

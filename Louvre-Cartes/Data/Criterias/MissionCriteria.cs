@@ -8,6 +8,6 @@ namespace LouvreCartes.Data
 {
     public abstract class MissionCriteria
     {
-
+        public abstract bool CheckIsImportant(int prestige, string type, string location, int date, float height);
     }
 }

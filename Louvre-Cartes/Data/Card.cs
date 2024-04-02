@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LouvreCartes.Data
 {
-    public class Carte
+    public class Card
     {
         public string Name;
         public int Prestige;

@@ -37,30 +37,25 @@ namespace LouvreCartes.Gameplay
             CalculatePlayersPoints(players);
         }
 
-        public void SimulateOneDay() // (List<Player> players) //List<Card> threeCards
+        public void SimulateOneDay(Game game) // (List<Player> players) //List<Card> threeCards
         {
-            List<Player> players = new List<Player>();
-            for (int i = 0; i < 3; i++)
+            /* Exemple
+            for(int day = 0; day < Game.NUMBER_OF_DAYS; day++)
             {
-                players.Add(new Player());
-                players[i].Gold = 140;
+                Card card0 = game.Cards[day, 0];
+                Card card1 = game.Cards[day, 1];
+                Card card2 = game.Cards[day, 2];
             }
-            Console.WriteLine($"Nombre players : {players.Count}");
+            */
 
-            // Init leur mise de côté
-            Dictionary<Player, int> playersBidSaved = new Dictionary<Player, int>();
-            foreach (Player player in players)
-            {
-                playersBidSaved.Add(player, 0);
-            }
-
+            //boucle de Bid
             for (int i = 0; i < 3; i++)
             {
                 // Les joueurs font leurs paris
-                int[] bids = new int[players.Count];
+                int[] bids = new int[game.Players.Length];
                 
                 Random random = new Random();
-                for (int j = 0; j < players.Count; j++)
+                for (int j = 0; j < game.Players.Length; j++)
                 {
                     int bid = random.Next(0, 70) + random.Next(1,6) * 10;
                     //int bid = player.Bid(threeCards[i]);
@@ -74,15 +69,15 @@ namespace LouvreCartes.Gameplay
                 Console.WriteLine($"Plus gross mise : joueur {highestBidPlayerIndex} : {highestBid}");
 
                 // On ajoute à la mise de côté les golds des joueurs qui n'ont pas gagné
-                for (int j = 0; j < players.Count; j++)
+                for (int j = 0; j < game.Players.Length; j++)
                 {
                     if (j != highestBidPlayerIndex)
                     {
-                        playersBidSaved[players[j]] += bids[j];
+                        game.Players[j].SavedGold += bids[j];
                         Console.WriteLine($"Gold mise de côté du joueur {j} : {bids[j]}");
                     }
                     // On retire leurs golds
-                    players[j].Gold -= bids[j];
+                    game.Players[j].Gold -= bids[j];
                 }
 
                 // On offre la carte au joueur qui a gagné
@@ -91,10 +86,10 @@ namespace LouvreCartes.Gameplay
             }
 
             //Fin de journée: on redonne les Golds aux players qui ont misé + les 30 golds
-            foreach (Player player in players)
+            foreach (Player player in game.Players)
             {
-                player.Gold += playersBidSaved[player] + 30;
-                Console.WriteLine($"Mise retrouvée : {playersBidSaved[player]} - +30  {playersBidSaved[player]+30} - Players Gold : {player.Gold}");
+                player.Gold += player.SavedGold + 30;
+                Console.WriteLine($"Mise retrouvée : {player.SavedGold} - +30  {player.SavedGold + 30} - Players Gold : {player.Gold}");
             }
         }
 
@@ -119,7 +114,7 @@ namespace LouvreCartes.Gameplay
                     playerCards.Add(cards[randomCardIndex]);
                 }
 
-                players.Add(new Player { Name = $"Player {i}", Gold = 140, Cards = playerCards });
+                players.Add(new Player(i, 140, new Mission[0]));
             }
 
             return players;
@@ -151,7 +146,7 @@ namespace LouvreCartes.Gameplay
                 }
                 player.TotalPrestige = totalPrestige;
 
-                Console.WriteLine($"{player.Name}: Total Prestige - {player.TotalPrestige}");
+                Console.WriteLine($"{player.ID} : Total Prestige - {player.TotalPrestige}");
             }
         }
     }

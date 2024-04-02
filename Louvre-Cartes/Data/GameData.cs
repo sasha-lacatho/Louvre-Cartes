@@ -11,7 +11,7 @@ namespace LouvreCartes.Data
     {
         public Mission[] Missions;
         public MissionType[] Types;
-        public Card[] Cartes;
+        public Card[] Cards;
 
 
         public override string ToString()
@@ -27,7 +27,7 @@ namespace LouvreCartes.Data
             foreach (MissionType item in Types) sb.AppendLine(item.ToString());
 
             sb.AppendLine("\n - Cards -\n");
-            foreach (Card item in Cartes) sb.AppendLine(item.ToString());
+            foreach (Card item in Cards) sb.AppendLine(item.ToString());
 
             return sb.ToString();
         }

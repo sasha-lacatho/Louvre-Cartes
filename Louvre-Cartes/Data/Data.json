@@ -1,430 +1,430 @@
 {
   "Missions": [
     {
-      "TEXT": "Au moins 1 oeuvre de prestige 3 ou plus",
-      "PRESTIGE": 3,
-      "TYPE": 0,
+      "Text": "Au moins 1 oeuvre de Prestige 3 ou plus",
+      "Prestige": 3,
+      "Type": 0,
       "X": 3,
       "Y": "",
       "REPEAT": 0
     },
     {
-      "TEXT": "Au moins 1 oeuvre égyptienne et 1 oeuvre italienne",
-      "PRESTIGE": 4,
-      "TYPE": 1,
+      "Text": "Au moins 1 oeuvre égyptienne et 1 oeuvre italienne",
+      "Prestige": 4,
+      "Type": 1,
       "X": "EGYPTE",
       "Y": "ITALIE",
       "REPEAT": 0
     },
     {
-      "TEXT": "",
-      "PRESTIGE": "",
-      "TYPE": "",
+      "Text": "",
+      "Prestige": "",
+      "Type": "",
       "X": "",
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Pour chaque oeuvre dont la date est inférieur à 0",
-      "PRESTIGE": 1,
-      "TYPE": 2,
+      "Text": "Pour chaque oeuvre dont la Date est inférieur à 0",
+      "Prestige": 1,
+      "Type": 2,
       "X": 0,
       "Y": "",
       "REPEAT": 1
     },
     {
-      "TEXT": "Pour chaque oeuvre de prestige 2",
-      "PRESTIGE": 1,
-      "TYPE": 3,
+      "Text": "Pour chaque oeuvre de Prestige 2",
+      "Prestige": 1,
+      "Type": 3,
       "X": 2,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Pour chaque peinture",
-      "PRESTIGE": 1,
-      "TYPE": 4,
+      "Text": "Pour chaque peinture",
+      "Prestige": 1,
+      "Type": 4,
       "X": 0,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Au moins une oeuvre mésopotamienne",
-      "PRESTIGE": 3,
-      "TYPE": 1,
+      "Text": "Au moins une oeuvre mésopotamienne",
+      "Prestige": 3,
+      "Type": 1,
       "X": "MESOPOTAMIE",
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Pour chaque oeuvre dont la taille est inférieure à 2m",
-      "PRESTIGE": 1,
-      "TYPE": 5,
+      "Text": "Pour chaque oeuvre dont la Height est inférieure à 2m",
+      "Prestige": 1,
+      "Type": 5,
       "X": 0,
       "Y": "",
       "REPEAT": 1
     },
     {
-      "TEXT": "Au moins 2 oeuvres dont la date est intérieure à l'an 0",
-      "PRESTIGE": 4,
-      "TYPE": 2,
+      "Text": "Au moins 2 oeuvres dont la Date est intérieure à l'an 0",
+      "Prestige": 4,
+      "Type": 2,
       "X": 0,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Obtenir exactement 3 oeuvres",
-      "PRESTIGE": 3,
-      "TYPE": 6,
+      "Text": "Obtenir exactement 3 oeuvres",
+      "Prestige": 3,
+      "Type": 6,
       "X": 3,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Au moins 2 sculptures",
-      "PRESTIGE": 4,
-      "TYPE": 4,
+      "Text": "Au moins 2 sculptures",
+      "Prestige": 4,
+      "Type": 4,
       "X": 1,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Au moins 2 peintures",
-      "PRESTIGE": 3,
-      "TYPE": 4,
+      "Text": "Au moins 2 peintures",
+      "Prestige": 3,
+      "Type": 4,
       "X": 0,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Au moins 2 oeuvres dont la date est supérieure à l'an 0",
-      "PRESTIGE": 3,
-      "TYPE": 2,
+      "Text": "Au moins 2 oeuvres dont la Date est supérieure à l'an 0",
+      "Prestige": 3,
+      "Type": 2,
       "X": 1,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Pour chaque oeuvre de prestige 1",
-      "PRESTIGE": 1,
-      "TYPE": 3,
+      "Text": "Pour chaque oeuvre de Prestige 1",
+      "Prestige": 1,
+      "Type": 3,
       "X": 1,
       "Y": "",
       "REPEAT": 1
     },
     {
-      "TEXT": "Au moins une oeuvre de prestige 3 et une oeuvre de prestige 2",
-      "PRESTIGE": 4,
-      "TYPE": 3,
+      "Text": "Au moins une oeuvre de Prestige 3 et une oeuvre de Prestige 2",
+      "Prestige": 4,
+      "Type": 3,
       "X": 3,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Pour chaque oeuvre dont la taille est supérieure à 2m",
-      "PRESTIGE": 1,
-      "TYPE": 5,
+      "Text": "Pour chaque oeuvre dont la Height est supérieure à 2m",
+      "Prestige": 1,
+      "Type": 5,
       "X": 1,
       "Y": "",
       "REPEAT": 1
     },
     {
-      "TEXT": "Au moins 1 oeuvre française",
-      "PRESTIGE": 3,
-      "TYPE": 1,
+      "Text": "Au moins 1 oeuvre française",
+      "Prestige": 3,
+      "Type": 1,
       "X": "FRANCE",
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Obtenir 3 oeuvres ou plus",
-      "PRESTIGE": 3,
-      "TYPE": 0,
+      "Text": "Obtenir 3 oeuvres ou plus",
+      "Prestige": 3,
+      "Type": 0,
       "X": -100,
       "Y": "",
       "REPEAT": ""
     },
     {
-      "TEXT": "Au moins 1 oeuvre egyptienne et une française",
-      "PRESTIGE": 4,
-      "TYPE": 1,
+      "Text": "Au moins 1 oeuvre egyptienne et une française",
+      "Prestige": 4,
+      "Type": 1,
       "X": "EGYPTE",
       "Y": "FRANCE",
       "REPEAT": ""
     }
-  ]
+  ],
 
   "Types": [
     {
-      "TYPE": 0,
-      "DESCRIPTION": "1 oeuvre de prestige X ou plus"
+      "Type": 0,
+      "DESCRIPTION": "1 oeuvre de Prestige X ou plus"
     },
     {
-      "TYPE": 1,
-      "DESCRIPTION": "1 oeuvre X(lieu)"
+      "Type": 1,
+      "DESCRIPTION": "1 oeuvre X(Location)"
     },
     {
-      "TYPE": 2,
-      "DESCRIPTION": "1 oeuvre date  X (0 inférieur - 1 supérieur) à 0"
+      "Type": 2,
+      "DESCRIPTION": "1 oeuvre Date  X (0 inférieur - 1 supérieur) à 0"
     },
     {
-      "TYPE": 3,
-      "DESCRIPTION": "1 oeuvre de prestige X exactement"
+      "Type": 3,
+      "DESCRIPTION": "1 oeuvre de Prestige X exactement"
     },
     {
-      "TYPE": 4,
-      "DESCRIPTION": "1 oeuvre de type X ( 0 peinture - 1 sculpture)"
+      "Type": 4,
+      "DESCRIPTION": "1 oeuvre de Type X ( 0 peinture - 1 sculpture)"
     },
     {
-      "TYPE": 5,
-      "DESCRIPTION": "1 oeuvre taille X( 0 inférieur - 1 supérieur ) à 2m"
+      "Type": 5,
+      "DESCRIPTION": "1 oeuvre Height X( 0 inférieur - 1 supérieur ) à 2m"
     },
     {
-      "TYPE": 6,
+      "Type": 6,
       "DESCRIPTION": "obtenir exactement X oeuvres"
     }
-  ]
+  ],
 
   "Cartes": [
     {
-      "NOM": "Le code Hammurabi, roi de Babylone",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "MESOPOTAMIE",
-      "DATE": -1700,
-      "TAILLE": "2,25"
+      "Name": "Le code Hammurabi, roi de Babylone",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "MESOPOTAMIE",
+      "Date": -1700,
+      "Height": "2,25"
     },
     {
-      "NOM": "La Victoire de Samothrace",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "GRECE",
-      "DATE": -150,
-      "TAILLE": "5,57"
+      "Name": "La Victoire de Samothrace",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "GRECE",
+      "Date": -150,
+      "Height": "5,57"
     },
     {
-      "NOM": "La Vénus de Milo",
-      "PRESTIGE": 3,
-      "TYPE": "sculpture",
-      "LIEU": "GRECE",
-      "DATE": -100,
-      "TAILLE": "2,02"
+      "Name": "La Vénus de Milo",
+      "Prestige": 3,
+      "Type": "sculpture",
+      "Location": "GRECE",
+      "Date": -100,
+      "Height": "2,02"
     },
     {
-      "NOM": "Joconde",
-      "PRESTIGE": 4,
-      "TYPE": "peinture",
-      "LIEU": "ITALIE",
-      "DATE": 1503,
-      "TAILLE": "0,77"
+      "Name": "Joconde",
+      "Prestige": 4,
+      "Type": "peinture",
+      "Location": "ITALIE",
+      "Date": 1503,
+      "Height": "0,77"
     },
     {
-      "NOM": "Les noces de Cana",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "ITALIE",
-      "DATE": 1560,
-      "TAILLE": "6,77"
+      "Name": "Les noces de Cana",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "ITALIE",
+      "Date": 1560,
+      "Height": "6,77"
     },
     {
-      "NOM": "La liberté guidant le peuple",
-      "PRESTIGE": 3,
-      "TYPE": "peinture",
-      "LIEU": "FRANCE",
-      "DATE": 1830,
-      "TAILLE": "2,6"
+      "Name": "La liberté guidant le peuple",
+      "Prestige": 3,
+      "Type": "peinture",
+      "Location": "FRANCE",
+      "Date": 1830,
+      "Height": "2,6"
     },
     {
-      "NOM": "Taureaux ailés de Khorsabad",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "MESOPOTAMIE",
-      "DATE": -800,
-      "TAILLE": 4
+      "Name": "Taureaux ailés de Khorsabad",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "MESOPOTAMIE",
+      "Date": -800,
+      "Height": 4
     },
     {
-      "NOM": "Le scribe accroupi",
-      "PRESTIGE": 3,
-      "TYPE": "sculpture",
-      "LIEU": "EGYPTE",
-      "DATE": -2600,
-      "TAILLE": "0,53"
+      "Name": "Le scribe accroupi",
+      "Prestige": 3,
+      "Type": "sculpture",
+      "Location": "EGYPTE",
+      "Date": -2600,
+      "Height": "0,53"
     },
     {
-      "NOM": "Le radeau de la méduse",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "FRANCE",
-      "DATE": 1818,
-      "TAILLE": "4,91"
+      "Name": "Le radeau de la méduse",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "FRANCE",
+      "Date": 1818,
+      "Height": "4,91"
     },
     {
-      "NOM": "Le sacre de Napoléon",
-      "PRESTIGE": 2,
-      "TYPE": "peinture",
-      "LIEU": "FRANCE",
-      "DATE": 1805,
-      "TAILLE": "6,21"
+      "Name": "Le sacre de Napoléon",
+      "Prestige": 2,
+      "Type": "peinture",
+      "Location": "FRANCE",
+      "Date": 1805,
+      "Height": "6,21"
     },
     {
-      "NOM": "Psyché ranimée par le baiser de l'Amour",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "ITALIE",
-      "DATE": 1787,
-      "TAILLE": "1,55"
+      "Name": "Psyché ranimée par le baiser de l'Amour",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "ITALIE",
+      "Date": 1787,
+      "Height": "1,55"
     },
     {
-      "NOM": "La Vierge du chancelier Rolin",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "FLAMAND",
-      "DATE": 1435,
-      "TAILLE": "0,66"
+      "Name": "La Vierge du chancelier Rolin",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "FLAMAND",
+      "Date": 1435,
+      "Height": "0,66"
     },
     {
-      "NOM": "La reine Tiy aux côtés du roi Aménophis III",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "EGYPTE",
-      "DATE": -1350,
-      "TAILLE": "0,29"
+      "Name": "La reine Tiy aux côtés du roi Aménophis III",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "EGYPTE",
+      "Date": -1350,
+      "Height": "0,29"
     },
     {
-      "NOM": "Le Grand sphinx de Tanis",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "EGYPTE",
-      "DATE": -2600,
-      "TAILLE": "4,8"
+      "Name": "Le Grand sphinx de Tanis",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "EGYPTE",
+      "Date": -2600,
+      "Height": "4,8"
     },
     {
-      "NOM": "Statuette de Pazuzu",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "MESOPOTAMIE",
-      "DATE": -700,
-      "TAILLE": "0,15"
+      "Name": "Statuette de Pazuzu",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "MESOPOTAMIE",
+      "Date": -700,
+      "Height": "0,15"
     },
     {
-      "NOM": "Tête de Hammurabi",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "MESOPOTAMIE",
-      "DATE": -1200,
-      "TAILLE": "0,15"
+      "Name": "Tête de Hammurabi",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "MESOPOTAMIE",
+      "Date": -1200,
+      "Height": "0,15"
     },
     {
-      "NOM": "La Nef des fous",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "FLAMAND",
-      "DATE": 1500,
-      "TAILLE": "0,58"
+      "Name": "La Nef des fous",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "FLAMAND",
+      "Date": 1500,
+      "Height": "0,58"
     },
     {
-      "NOM": "L'astronome",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "FLAMAND",
-      "DATE": 1668,
-      "TAILLE": "0,51"
+      "Name": "L'astronome",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "FLAMAND",
+      "Date": 1668,
+      "Height": "0,51"
     },
     {
-      "NOM": "Le tricheur à l'as de carreau",
-      "PRESTIGE": 2,
-      "TYPE": "peinture",
-      "LIEU": "FRANCE",
-      "DATE": 1636,
-      "TAILLE": "1,06"
+      "Name": "Le tricheur à l'as de carreau",
+      "Prestige": 2,
+      "Type": "peinture",
+      "Location": "FRANCE",
+      "Date": 1636,
+      "Height": "1,06"
     },
     {
-      "NOM": "Amphore panathénaïque",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "GRECE",
-      "DATE": -320,
-      "TAILLE": "0,6"
+      "Name": "Amphore panathénaïque",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "GRECE",
+      "Date": -320,
+      "Height": "0,6"
     },
     {
-      "NOM": "Dame d'Auxerre",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "GRECE",
-      "DATE": -630,
-      "TAILLE": "0,75"
+      "Name": "Dame d'Auxerre",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "GRECE",
+      "Date": -630,
+      "Height": "0,75"
     },
     {
-      "NOM": "Tête de cheval",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "GRECE",
-      "DATE": -500,
-      "TAILLE": "0,4"
+      "Name": "Tête de cheval",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "GRECE",
+      "Date": -500,
+      "Height": "0,4"
     },
     {
-      "NOM": "Chevaux de Marly",
-      "PRESTIGE": 3,
-      "TYPE": "sculpture",
-      "LIEU": "FRANCE",
-      "DATE": 1743,
-      "TAILLE": "3,4"
+      "Name": "Chevaux de Marly",
+      "Prestige": 3,
+      "Type": "sculpture",
+      "Location": "FRANCE",
+      "Date": 1743,
+      "Height": "3,4"
     },
     {
-      "NOM": "Gabrielle d'Estrées et une de ses sœurs",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "FRANCE",
-      "DATE": 1594,
-      "TAILLE": "0,96"
+      "Name": "Gabrielle d'Estrées et une de ses sœurs",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "FRANCE",
+      "Date": 1594,
+      "Height": "0,96"
     },
     {
-      "NOM": "Portrait de Louis XIV en costume de sacre",
-      "PRESTIGE": 2,
-      "TYPE": "peinture",
-      "LIEU": "FRANCE",
-      "DATE": 1701,
-      "TAILLE": "2,77"
+      "Name": "Portrait de Louis XIV en costume de sacre",
+      "Prestige": 2,
+      "Type": "peinture",
+      "Location": "FRANCE",
+      "Date": 1701,
+      "Height": "2,77"
     },
     {
-      "NOM": "La Vierge aux rochers",
-      "PRESTIGE": 1,
-      "TYPE": "peinture",
-      "LIEU": "ITALIE",
-      "DATE": 1483,
-      "TAILLE": "1,99"
+      "Name": "La Vierge aux rochers",
+      "Prestige": 1,
+      "Type": "peinture",
+      "Location": "ITALIE",
+      "Date": 1483,
+      "Height": "1,99"
     },
     {
-      "NOM": "Statue Horus Posno",
-      "PRESTIGE": 2,
-      "TYPE": "sculpture",
-      "LIEU": "EGYPTE",
-      "DATE": -1000,
-      "TAILLE": "0,95"
+      "Name": "Statue Horus Posno",
+      "Prestige": 2,
+      "Type": "sculpture",
+      "Location": "EGYPTE",
+      "Date": -1000,
+      "Height": "0,95"
     },
     {
-      "NOM": "La momie du Louvre",
-      "PRESTIGE": 3,
-      "TYPE": "?",
-      "LIEU": "EGYPTE",
-      "DATE": -300,
-      "TAILLE": "1,66"
+      "Name": "La momie du Louvre",
+      "Prestige": 3,
+      "Type": "?",
+      "Location": "EGYPTE",
+      "Date": -300,
+      "Height": "1,66"
     },
     {
-      "NOM": "Sarcophage extérieur de Tamoutnefret",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "EGYPTE",
-      "DATE": -1200,
-      "TAILLE": "1,92"
+      "Name": "Sarcophage extérieur de Tamoutnefret",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "EGYPTE",
+      "Date": -1200,
+      "Height": "1,92"
     },
     {
-      "NOM": "Hercule combattant l'Hydre",
-      "PRESTIGE": 1,
-      "TYPE": "sculpture",
-      "LIEU": "ITALIE",
-      "DATE": 1525,
-      "TAILLE": "2,17"
+      "Name": "Hercule combattant l'Hydre",
+      "Prestige": 1,
+      "Type": "sculpture",
+      "Location": "ITALIE",
+      "Date": 1525,
+      "Height": "2,17"
     }
   ]
 }

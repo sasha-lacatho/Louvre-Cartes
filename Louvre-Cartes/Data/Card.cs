@@ -14,5 +14,10 @@ namespace LouvreCartes.Data
         public string Location;
         public int Date;
         public string Height;
+
+        public override string ToString()
+        {
+            return $"{GetType().Name} : {Name} :\n - P.{Prestige}, T.{Type}, L.{Location}, D.{Date}, H.{Height}";
+        }
     }
 }

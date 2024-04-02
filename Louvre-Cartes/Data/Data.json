@@ -6,31 +6,23 @@
       "Type": 0,
       "X": 3,
       "Y": "",
-      "REPEAT": 0
+      "Repeat": 0
     },
     {
-      "Text": "Au moins 1 oeuvre égyptienne et 1 oeuvre italienne",
+      "Text": "Au moins 1 oeuvre ï¿½gyptienne et 1 oeuvre italienne",
       "Prestige": 4,
       "Type": 1,
       "X": "EGYPTE",
       "Y": "ITALIE",
-      "REPEAT": 0
+      "Repeat": 0
     },
     {
-      "Text": "",
-      "Prestige": "",
-      "Type": "",
-      "X": "",
-      "Y": "",
-      "REPEAT": ""
-    },
-    {
-      "Text": "Pour chaque oeuvre dont la Date est inférieur à 0",
+      "Text": "Pour chaque oeuvre dont la Date est infï¿½rieur ï¿½ 0",
       "Prestige": 1,
       "Type": 2,
       "X": 0,
       "Y": "",
-      "REPEAT": 1
+      "Repeat": 1
     },
     {
       "Text": "Pour chaque oeuvre de Prestige 2",
@@ -38,7 +30,7 @@
       "Type": 3,
       "X": 2,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
       "Text": "Pour chaque peinture",
@@ -46,31 +38,31 @@
       "Type": 4,
       "X": 0,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
-      "Text": "Au moins une oeuvre mésopotamienne",
+      "Text": "Au moins une oeuvre mï¿½sopotamienne",
       "Prestige": 3,
       "Type": 1,
       "X": "MESOPOTAMIE",
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
-      "Text": "Pour chaque oeuvre dont la Height est inférieure à 2m",
+      "Text": "Pour chaque oeuvre dont la Height est infï¿½rieure ï¿½ 2m",
       "Prestige": 1,
       "Type": 5,
       "X": 0,
       "Y": "",
-      "REPEAT": 1
+      "Repeat": 1
     },
     {
-      "Text": "Au moins 2 oeuvres dont la Date est intérieure à l'an 0",
+      "Text": "Au moins 2 oeuvres dont la Date est intï¿½rieure ï¿½ l'an 0",
       "Prestige": 4,
       "Type": 2,
       "X": 0,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
       "Text": "Obtenir exactement 3 oeuvres",
@@ -78,7 +70,7 @@
       "Type": 6,
       "X": 3,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
       "Text": "Au moins 2 sculptures",
@@ -86,7 +78,7 @@
       "Type": 4,
       "X": 1,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
       "Text": "Au moins 2 peintures",
@@ -94,15 +86,15 @@
       "Type": 4,
       "X": 0,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
-      "Text": "Au moins 2 oeuvres dont la Date est supérieure à l'an 0",
+      "Text": "Au moins 2 oeuvres dont la Date est supï¿½rieure ï¿½ l'an 0",
       "Prestige": 3,
       "Type": 2,
       "X": 1,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
       "Text": "Pour chaque oeuvre de Prestige 1",
@@ -110,7 +102,7 @@
       "Type": 3,
       "X": 1,
       "Y": "",
-      "REPEAT": 1
+      "Repeat": 1
     },
     {
       "Text": "Au moins une oeuvre de Prestige 3 et une oeuvre de Prestige 2",
@@ -118,23 +110,23 @@
       "Type": 3,
       "X": 3,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
-      "Text": "Pour chaque oeuvre dont la Height est supérieure à 2m",
+      "Text": "Pour chaque oeuvre dont la Height est supï¿½rieure ï¿½ 2m",
       "Prestige": 1,
       "Type": 5,
       "X": 1,
       "Y": "",
-      "REPEAT": 1
+      "Repeat": 1
     },
     {
-      "Text": "Au moins 1 oeuvre française",
+      "Text": "Au moins 1 oeuvre franï¿½aise",
       "Prestige": 3,
       "Type": 1,
       "X": "FRANCE",
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
       "Text": "Obtenir 3 oeuvres ou plus",
@@ -142,15 +134,15 @@
       "Type": 0,
       "X": -100,
       "Y": "",
-      "REPEAT": ""
+      "Repeat": 0
     },
     {
-      "Text": "Au moins 1 oeuvre egyptienne et une française",
+      "Text": "Au moins 1 oeuvre egyptienne et une franï¿½aise",
       "Prestige": 4,
       "Type": 1,
       "X": "EGYPTE",
       "Y": "FRANCE",
-      "REPEAT": ""
+      "Repeat": 0
     }
   ],
 
@@ -165,7 +157,7 @@
     },
     {
       "Type": 2,
-      "DESCRIPTION": "1 oeuvre Date  X (0 inférieur - 1 supérieur) à 0"
+      "DESCRIPTION": "1 oeuvre Date  X (0 infÃ©rieur - 1 supÃ©rieur) Ã  0"
     },
     {
       "Type": 3,
@@ -177,7 +169,7 @@
     },
     {
       "Type": 5,
-      "DESCRIPTION": "1 oeuvre Height X( 0 inférieur - 1 supérieur ) à 2m"
+      "DESCRIPTION": "1 oeuvre Taille X( 0 infÃ©rieur - 1 supÃ©rieur ) Ã  2m"
     },
     {
       "Type": 6,
@@ -203,7 +195,7 @@
       "Height": "5,57"
     },
     {
-      "Name": "La Vénus de Milo",
+      "Name": "La Vï¿½nus de Milo",
       "Prestige": 3,
       "Type": "sculpture",
       "Location": "GRECE",
@@ -227,7 +219,7 @@
       "Height": "6,77"
     },
     {
-      "Name": "La liberté guidant le peuple",
+      "Name": "La libertï¿½ guidant le peuple",
       "Prestige": 3,
       "Type": "peinture",
       "Location": "FRANCE",
@@ -235,7 +227,7 @@
       "Height": "2,6"
     },
     {
-      "Name": "Taureaux ailés de Khorsabad",
+      "Name": "Taureaux ailï¿½s de Khorsabad",
       "Prestige": 2,
       "Type": "sculpture",
       "Location": "MESOPOTAMIE",
@@ -251,7 +243,7 @@
       "Height": "0,53"
     },
     {
-      "Name": "Le radeau de la méduse",
+      "Name": "Le radeau de la mï¿½duse",
       "Prestige": 1,
       "Type": "peinture",
       "Location": "FRANCE",
@@ -259,7 +251,7 @@
       "Height": "4,91"
     },
     {
-      "Name": "Le sacre de Napoléon",
+      "Name": "Le sacre de Napolï¿½on",
       "Prestige": 2,
       "Type": "peinture",
       "Location": "FRANCE",
@@ -267,7 +259,7 @@
       "Height": "6,21"
     },
     {
-      "Name": "Psyché ranimée par le baiser de l'Amour",
+      "Name": "Psychï¿½ ranimï¿½e par le baiser de l'Amour",
       "Prestige": 2,
       "Type": "sculpture",
       "Location": "ITALIE",
@@ -283,7 +275,7 @@
       "Height": "0,66"
     },
     {
-      "Name": "La reine Tiy aux côtés du roi Aménophis III",
+      "Name": "La reine Tiy aux cï¿½tï¿½s du roi Amï¿½nophis III",
       "Prestige": 1,
       "Type": "sculpture",
       "Location": "EGYPTE",
@@ -307,7 +299,7 @@
       "Height": "0,15"
     },
     {
-      "Name": "Tête de Hammurabi",
+      "Name": "Tï¿½te de Hammurabi",
       "Prestige": 1,
       "Type": "sculpture",
       "Location": "MESOPOTAMIE",
@@ -331,7 +323,7 @@
       "Height": "0,51"
     },
     {
-      "Name": "Le tricheur à l'as de carreau",
+      "Name": "Le tricheur ï¿½ l'as de carreau",
       "Prestige": 2,
       "Type": "peinture",
       "Location": "FRANCE",
@@ -339,7 +331,7 @@
       "Height": "1,06"
     },
     {
-      "Name": "Amphore panathénaïque",
+      "Name": "Amphore panathï¿½naï¿½que",
       "Prestige": 1,
       "Type": "sculpture",
       "Location": "GRECE",
@@ -355,7 +347,7 @@
       "Height": "0,75"
     },
     {
-      "Name": "Tête de cheval",
+      "Name": "Tï¿½te de cheval",
       "Prestige": 1,
       "Type": "sculpture",
       "Location": "GRECE",
@@ -371,7 +363,7 @@
       "Height": "3,4"
     },
     {
-      "Name": "Gabrielle d'Estrées et une de ses sœurs",
+      "Name": "Gabrielle d'Estrï¿½es et une de ses sï¿½urs",
       "Prestige": 1,
       "Type": "peinture",
       "Location": "FRANCE",
@@ -411,7 +403,7 @@
       "Height": "1,66"
     },
     {
-      "Name": "Sarcophage extérieur de Tamoutnefret",
+      "Name": "Sarcophage extï¿½rieur de Tamoutnefret",
       "Prestige": 1,
       "Type": "sculpture",
       "Location": "EGYPTE",

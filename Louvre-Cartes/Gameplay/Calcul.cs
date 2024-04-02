@@ -10,7 +10,7 @@ namespace LouvreCartes.Gameplay
 {
     public class Calcul
     {
-        public static void Main()
+        public void MainTest()
         {
             // Liste des cartes à reprendre des datas
             List<Card> cards = new List<Card>
@@ -19,8 +19,8 @@ namespace LouvreCartes.Gameplay
                 new Card { Name = "Card 2", Prestige = 2 },
             };
 
-            int nbPlayers = 3; 
-            int totalGames = 1000; 
+            int nbPlayers = 3;
+            int totalGames = 1000;
 
 
             // Create players
@@ -82,14 +82,24 @@ namespace LouvreCartes.Gameplay
             CalculatePlayersPoints(players);
         }
 
+        public void SimulateOneDay()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+
+            }
+        }
+
+
+
         // Function to determine if a card is important for the player's missions
-        public static bool IsImportantForMissions(Card card)
+        public bool IsImportantForMissions(Card card)
         {
             Random random = new Random();
             return random.Next(2) == 0; // Random simulation
         }
 
-        public static List<Player> CreatePlayers(List<Player> players, int nbPlayers, List<Card> cards)
+        public List<Player> CreatePlayers(List<Player> players, int nbPlayers, List<Card> cards)
         {
             for (int i = 1; i <= nbPlayers; i++)
             {
@@ -106,7 +116,7 @@ namespace LouvreCartes.Gameplay
             return players;
         }
 
-        public static void CalculatePlayersPoints(List<Player> players)
+        public void CalculatePlayersPoints(List<Player> players)
         {
             // Find the player with the most gold
             Player goldWinner = players[0];

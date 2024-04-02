@@ -8,6 +8,11 @@ namespace LouvreCartes.Data
 {
     public class MinimumPrestigeCriteria : MissionCriteria
     {
+        public int MinimumPrestige;
 
+        public MinimumPrestigeCriteria(int prestige) 
+        { 
+            MinimumPrestige = prestige;
+        }
     }
 }

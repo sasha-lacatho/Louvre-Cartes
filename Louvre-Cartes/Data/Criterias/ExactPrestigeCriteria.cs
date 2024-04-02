@@ -8,6 +8,11 @@ namespace LouvreCartes.Data
 {
     public class ExactPrestigeCriteria : MissionCriteria
     {
+        public int[] ExactPrestige;
 
+        public ExactPrestigeCriteria(int[] prestige)
+        {
+            ExactPrestige = prestige;
+        }
     }
 }

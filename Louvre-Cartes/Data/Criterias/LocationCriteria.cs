@@ -8,6 +8,11 @@ namespace LouvreCartes.Data
 {
     public class LocationCriteria : MissionCriteria
     {
+        public string[] Locations;
 
+        public LocationCriteria(string[] locations)
+        {
+            Locations = locations;
+        }
     }
 }

@@ -52,6 +52,7 @@ namespace LouvreCartes.Gameplay
 
         public int Bid(Card card)
         {
+            // A modif
             Random random = new Random();
             int minBid = IsImportantForMissions(card) ? 20 + card.Prestige * 10 : -10 + card.Prestige * 10;
             int maxBid = IsImportantForMissions(card) ? 70 + card.Prestige * 10 : 40 + card.Prestige * 10;
@@ -60,6 +61,7 @@ namespace LouvreCartes.Gameplay
 
         public bool IsImportantForMissions(Card card)
         {
+            // A modif
             Random random = new Random();
             return random.Next(2) == 0; // Random simulation
         }

@@ -8,25 +8,10 @@ namespace LouvreCartes.Data
 {
     public class DateCriteria : MissionCriteria
     {
-        public int MinimumDate;
-        public bool IsInferior;
-        public int MinimumNeeded;
-
-        public DateCriteria(int date, bool isInferior, int minimumNeeded)
+        protected override bool CheckCriteria(Mission mission, int count, Card card)
         {
-            MinimumDate = date;
-            IsInferior = isInferior;
-            MinimumNeeded = minimumNeeded;
-        }
-
-        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
-        {
-            if((IsInferior && date < MinimumDate) || (!IsInferior && date > MinimumDate))
-            {
-                return true;
-            }
-
-            return false;
+            bool inferior = mission.X is int value && value == 0;
+            return inferior ? (card.Date <= 0) : (card.Date >= 0);
         }
     }
 }

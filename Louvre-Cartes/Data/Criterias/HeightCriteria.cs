@@ -8,23 +8,10 @@ namespace LouvreCartes.Data
 {
     public class HeightCriteria : MissionCriteria
     {
-        public float Height;
-        public bool IsInferior;
-
-        public HeightCriteria(float height, bool isInferior)
+        protected override bool CheckCriteria(Mission mission, int count, Card card)
         {
-            Height = height;
-            IsInferior = isInferior;
-        }
-
-        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
-        {
-            if((IsInferior && height < Height) || (!IsInferior && height > Height))
-            {
-                return true;
-            }
-
-            return false;
+            bool inferior = mission.X is int value && value == 0;
+            return inferior ? (card.Height <= 2) : (card.Height >= 2);
         }
     }
 }

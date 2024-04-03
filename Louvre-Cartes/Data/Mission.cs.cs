@@ -15,7 +15,7 @@ namespace LouvreCartes.Data
         public object X;
         public object Y;
         public int Repeat;
-        public MissionType TypeMission;
+        public MissionCriteria Criteria;
 
         public override string ToString()
         {

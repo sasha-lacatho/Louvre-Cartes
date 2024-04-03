@@ -8,18 +8,10 @@ namespace LouvreCartes.Data
 {
     public class TypeCriteria : MissionCriteria
     {
-        public string Type;
-        public int MinimumNumber;
+        protected override bool CheckCriteria(Mission mission, int count, Card card)
+        {
+            return (mission.X is string value && card.Type == value) || (mission.Y is string val && val == card.Type);
 
-        public TypeCriteria(string type, int minimumNumber)
-        {
-            Type = type;
-            MinimumNumber = minimumNumber;
-        }
-        
-        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
-        {
-            return Type == type;
         }
     }
 }

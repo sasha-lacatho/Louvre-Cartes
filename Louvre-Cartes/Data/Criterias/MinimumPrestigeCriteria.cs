@@ -8,23 +8,9 @@ namespace LouvreCartes.Data
 {
     public class MinimumPrestigeCriteria : MissionCriteria
     {
-        public int MinimumPrestige;
-        public int MinimumNumberNeeded;
-
-        public MinimumPrestigeCriteria(int prestige, int nbNeeded) 
-        { 
-            MinimumPrestige = prestige;
-            MinimumNumberNeeded = nbNeeded;
-        }
-
-        public override bool CheckIsImportant(int prestige, string type, string location, int date, float height)
+        protected override bool CheckCriteria(Mission mission, int count, Card card)
         {
-            if(MinimumNumberNeeded <= prestige)
-            {
-                return true;
-            }
-
-            return false;
+            return (mission.X is int minimum && minimum <= card.Prestige);
         }
     }
 }

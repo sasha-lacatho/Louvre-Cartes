@@ -55,7 +55,8 @@ namespace LouvreCartes.Gameplay
             Random random = new Random();
             int bid = 0;
 
-            if(IsImportantForMissions(card))
+            Console.Write($"{card} is important for : ");
+            if (IsImportantForMissions(card))
             {
                 bid = random.Next(20, 70) + card.Prestige * 10;
             }
@@ -64,7 +65,6 @@ namespace LouvreCartes.Gameplay
                 bid = random.Next(-10, 40) + card.Prestige * 10;
             }
 
-            Console.WriteLine($"Is important for missions ? : {IsImportantForMissions(card)}");
 
             return bid;
         }
@@ -73,7 +73,9 @@ namespace LouvreCartes.Gameplay
         {
             foreach (Mission mission in Missions)
             {
-                if(mission.TypeMission.Criteria.CheckIsImportant(card.Prestige, card.Type, card.Location, card.Date, card.Height))
+                bool val = mission.Criteria.IsImportant(mission, Cards, card);
+                Console.WriteLine($"{val} : {mission}");
+                if (val)
                     return true;
             }
 

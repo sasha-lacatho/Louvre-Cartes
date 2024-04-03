@@ -26,6 +26,16 @@ namespace LouvreCartes.Gameplay
 
         public Game(GameData data)
         {
+            #region Initialise Mission's criterias
+
+            // ----- Need to Init mission.Criteria because it's null -----
+            foreach (Mission mission in data.Missions)
+            {
+                mission.Criteria = data.Types[mission.Type].Criteria;
+            }
+
+            #endregion
+
             Random random = new Random(Environment.TickCount);
 
             #region Pick Auction Cards

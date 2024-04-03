@@ -8,6 +8,18 @@ namespace LouvreCartes.Data
 {
     public abstract class MissionCriteria
     {
-        public abstract bool CheckIsImportant(int prestige, string type, string location, int date, float height);
+        public bool IsImportant(Mission mission, ICollection<Card> cards, Card card)
+        {
+            int count = cards.Count;
+            if(mission.Repeat == 0)
+            {
+                foreach(Card item in cards)
+                {
+                    if(CheckCriteria(mission, count - 1, item)) return false;
+                }
+            }
+            return CheckCriteria(mission, count, card);
+        }
+        protected abstract bool CheckCriteria(Mission mission, int count, Card card);
     }
 }

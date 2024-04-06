@@ -31,5 +31,27 @@ namespace LouvreCartes.Data
 
             return sb.ToString();
         }
+        public void Initialize()
+        {
+            // ----- Need to Init mission.Criteria because it's null -----
+            foreach (Mission mission in Missions)
+            {
+                mission.Criteria = Types[mission.Type].Criteria;
+            }
+        }
+        public void TestAll()
+        {
+            foreach (Card card in Cards)
+            {
+                Console.WriteLine(card.ToString() + '\n');
+
+                foreach(Mission mission in Missions)
+                {
+                    Console.WriteLine($" - [{mission.Criteria.IsImportant(mission, new Card[0], card)}] ({mission.Criteria.GetType().Name}) {mission.Text}");
+                }
+
+                Console.WriteLine("\n - - - - - - - - - - - \n");
+            }
+        }
     }
 }

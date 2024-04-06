@@ -10,7 +10,7 @@ namespace LouvreCartes.Data
     {
         protected override bool CheckCriteria(Mission mission, int count, Card card)
         {
-            return mission.X is int value && value >= count + 1;
+            return mission.X is Int64 value && value >= count + 1;
         }
     }
 }

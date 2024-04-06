@@ -10,8 +10,8 @@ namespace LouvreCartes.Data
     {
         protected override bool CheckCriteria(Mission mission, int count, Card card)
         {
-            bool inferior = mission.X is int value && value == 0;
-            return inferior ? (card.Height <= 2) : (card.Height >= 2);
+            bool inferior = mission.X is Int64 value && value == 0;
+            return inferior ? (card.Height <= 200) : (card.Height >= 200);
         }
     }
 }

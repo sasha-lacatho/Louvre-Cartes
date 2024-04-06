@@ -10,43 +10,15 @@ namespace LouvreCartes.Gameplay
 {
     public class Calcul
     {
-        public void MainTest()
-        {
-            // Liste des cartes à reprendre des datas
-            List<Card> cards = new List<Card>
-            {
-                new Card { Name = "Card 1", Prestige = 3 },
-                new Card { Name = "Card 2", Prestige = 2 },
-            };
-
-            int nbPlayers = 3;
-            int totalGames = 1000;
-
-
-            // Create players
-            List<Player> players = new List<Player>();
-            players = CreatePlayers(players, nbPlayers, cards);
-
-
-
-            Random random = new Random();
-
-            // Simulate games
-            // ...
-
-            CalculatePlayersPoints(players);
-        }
-
         public void SimulateOneGame(Game game)
         {
-            //var cards = new List<Card>();
-            var gCards = game.Cards;
+            var cards = game.Cards;
             var players = game.Players;
 
-            for (int i = 0; i < gCards.GetLength(0); i++)
+            for (int i = 0; i < cards.GetLength(0); i++)
             {
                 // One day
-                for (int cardIndex = 0; cardIndex < gCards.GetLength(1); cardIndex++)
+                for (int cardIndex = 0; cardIndex < cards.GetLength(1); cardIndex++)
                 {
                     Console.WriteLine($"\n################## CARD NUMERO {cardIndex} - JOUR : {i}");
 
@@ -55,7 +27,7 @@ namespace LouvreCartes.Gameplay
 
                     for (int j = 0; j < players.Length; j++)
                     {
-                        int bid = players[j].Bid(gCards[i, cardIndex]);
+                        int bid = players[j].Bid(cards[i, cardIndex]);
                         bids[j] = bid;
                         Console.WriteLine($"Mise du joueur {j} : {bids[j]}");
                     }
@@ -81,7 +53,7 @@ namespace LouvreCartes.Gameplay
                     Console.WriteLine();
 
                     // On offre la carte au joueur qui a gagné
-                    players[highestBidPlayerIndex].Cards.Add(gCards[i, cardIndex]);
+                    players[highestBidPlayerIndex].Cards.Add(cards[i, cardIndex]);
                 }
 
                 //Fin de journée: on redonne les Golds aux players qui ont misé + les 30 golds
@@ -139,6 +111,7 @@ namespace LouvreCartes.Gameplay
                 int totalPrestige = player.Cards.Sum(card => card.Prestige);
                 if (player.GoldWinner)
                 {
+                    Console.WriteLine($"$$$ {player.ID} is the Gold Winner");
                     totalPrestige += 2; // Add 2 points of prestige if the player won the gold
                 }
                 player.TotalPrestige = totalPrestige;

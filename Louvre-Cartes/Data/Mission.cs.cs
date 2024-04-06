@@ -21,5 +21,10 @@ namespace LouvreCartes.Data
         {
             return $"{GetType().Name} : {Text} :\n - P.{Prestige}, T.{Type}, [X.{X}, Y.{Y}], R.{Repeat}";
         }
+
+        public int CalculatePrestige(List<Card> cards)
+        {
+            return Criteria.CalculatePrestige(this, cards);
+        }
     }
 }

@@ -21,5 +21,7 @@ namespace LouvreCartes.Data
             return CheckCriteria(mission, count, card);
         }
         protected abstract bool CheckCriteria(Mission mission, int count, Card card);
+
+        public abstract int CalculatePrestige(Mission mission, List<Card> cards);
     }
 }

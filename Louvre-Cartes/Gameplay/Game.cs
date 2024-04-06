@@ -166,15 +166,19 @@ namespace LouvreCartes.Gameplay
             Console.WriteLine("Total prestige for each player after the game:");
             foreach (Player player in Players)
             {
-                int totalPrestige = player.Cards.Sum(card => card.Prestige);
-                if (player.GoldWinner)
-                {
-                    Console.WriteLine($"$$$ {player.ID} is the Gold Winner");
-                    totalPrestige += 2; // Add 2 points of prestige if the player won the gold
-                }
-                player.TotalPrestige = totalPrestige;
+                int cardPrestige = player.Cards.Sum(card => card.Prestige);
 
-                Console.WriteLine($"Joueur {player.ID} : Total Prestige - {player.TotalPrestige}");
+                int missionPrestige = 0;
+                foreach (Mission mission in player.Missions)
+                {
+                    missionPrestige += mission.CalculatePrestige(player.Cards);
+                }
+
+                player.TotalPrestige = cardPrestige + missionPrestige;
+
+                if (player.GoldWinner) player.TotalPrestige += 2; // Add 2 points of prestige if the player won the gold
+
+                Console.WriteLine($"{player.ID} : Cards {cardPrestige} + Missions {missionPrestige}{(player.GoldWinner ? " + Gold 2" : "")} = {player.TotalPrestige}");
             }
         }
     }

@@ -21,8 +21,7 @@ namespace LouvreCartes
             //Console.WriteLine("Extracted data :");
             //Console.WriteLine(data);
 
-            Calcul testCalcul = new Calcul();
-            testCalcul.SimulateOneGame(game);
+            game.SimulateOneGame();
 
 
             Console.ReadLine();

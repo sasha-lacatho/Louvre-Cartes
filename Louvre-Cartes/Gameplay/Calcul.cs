@@ -37,18 +37,20 @@ namespace LouvreCartes.Gameplay
             CalculatePlayersPoints(players);
         }
 
-        public void SimulateOneDay(Game game, List<Card> cards) // (List<Player> players) //List<Card> threeCards
+        public void SimulateOneGame(Game game, List<Card> cards)
         {
-            //boucle de Bid
-            for (int i = 0; i < 3; i++)
+            var players = game.Players;
+
+            // Boucle de Bid
+            for (int cardIndex = 0; cardIndex < cards.Count; cardIndex++)
             {
+                Console.WriteLine($"\n################## CARD NUMERO {cardIndex}");
                 // Les joueurs font leurs paris
-                int[] bids = new int[game.Players.Length];
-                
-                Random random = new Random();
-                for (int j = 0; j < game.Players.Length; j++)
+                int[] bids = new int[players.Length];
+
+                for (int j = 0; j < players.Length; j++)
                 {
-                    int bid = game.Players[j].Bid(cards[i]);
+                    int bid = players[j].Bid(cards[cardIndex]);
                     bids[j] = bid;
                     Console.WriteLine($"Mise du joueur {j} : {bids[j]}");
                 }
@@ -56,45 +58,46 @@ namespace LouvreCartes.Gameplay
                 // On regarde qui a parié le +
                 int highestBid = bids.Max();
                 int highestBidPlayerIndex = Array.IndexOf(bids, highestBid);
-                Console.WriteLine($"Plus gross mise : joueur {highestBidPlayerIndex} : {highestBid}");
+                Console.WriteLine($"+++++ Plus grosse mise : joueur {highestBidPlayerIndex} : {highestBid} +++++");
 
                 // On ajoute à la mise de côté les golds des joueurs qui n'ont pas gagné
-                for (int j = 0; j < game.Players.Length; j++)
+                for (int j = 0; j < players.Length; j++)
                 {
                     if (j != highestBidPlayerIndex)
                     {
-                        game.Players[j].SavedGold += bids[j];
+                        players[j].SavedGold += bids[j];
                         Console.WriteLine($"Gold mise de côté du joueur {j} : {bids[j]}");
                     }
-                    // On retire leurs golds
-                    game.Players[j].Gold -= bids[j];
-                    Console.WriteLine($"-- Players Gold {j} : {game.Players[j].Gold}");
-                    Console.WriteLine();
 
+                    // On retire leurs golds
+                    players[j].Gold -= bids[j];
+                    Console.WriteLine($"-- Players Gold {j} : {players[j].Gold}");
                 }
+                Console.WriteLine();
 
                 // On offre la carte au joueur qui a gagné
-                //...
+                players[highestBidPlayerIndex].Cards.Add(cards[cardIndex]);
 
+
+                //Fin de journée: on redonne les Golds aux players qui ont misé + les 30 golds
+                int cardIndexAddOne = cardIndex + 1;
+                if (cardIndexAddOne % 3 == 0)
+                {
+                    Console.WriteLine("------------ Fin de journée");
+                    foreach (Player player in game.Players)
+                    {
+                        player.Gold += player.SavedGold + 30;
+                        Console.WriteLine($"--- Mise retrouvée : {player.SavedGold} " +
+                            $"--- +30 golds : {player.SavedGold + 30} --- Players Gold : {player.Gold}");
+                    }
+                }
             }
 
-            //Fin de journée: on redonne les Golds aux players qui ont misé + les 30 golds
-            foreach (Player player in game.Players)
-            {
-                player.Gold += player.SavedGold + 30;
-                Console.WriteLine($"--- Mise retrouvée : {player.SavedGold} --- +30 golds : {player.SavedGold + 30} --- Players Gold : {player.Gold}");
-            }
+            Console.WriteLine("\n-------------------- Fin de la partie");
+
+            CalculatePlayersPoints(players.ToList());
         }
 
-
-
-
-        // Function to determine if a card is important for the player's missions
-        public bool IsImportantForMissions(Card card)
-        {
-            Random random = new Random();
-            return random.Next(2) == 0; // Random simulation
-        }
 
         public List<Player> CreatePlayers(List<Player> players, int nbPlayers, List<Card> cards)
         {
@@ -125,11 +128,11 @@ namespace LouvreCartes.Gameplay
                 }
             }
 
-            // Set the GoldWinner flag for the player with the most gold
+            // Set the GoldWinner for the player with the most gold
             goldWinner.GoldWinner = true;
 
-            // Calculate and display total prestige for each player after the games
-            Console.WriteLine("Total prestige for each player after the games:");
+            // Calculate and display total prestige for each player after the game
+            Console.WriteLine("Total prestige for each player after the game:");
             foreach (Player player in players)
             {
                 int totalPrestige = player.Cards.Sum(card => card.Prestige);

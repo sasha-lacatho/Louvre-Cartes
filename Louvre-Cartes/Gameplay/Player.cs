@@ -17,6 +17,12 @@ namespace LouvreCartes.Gameplay
         public Mission[] Missions = new Mission[2];
         public List<Card> Cards = new List<Card>();
 
+        public const int IMPORTANT_MINBID = 20;
+        public const int IMPORTANT_MAXBID = 70;
+        public const int NOT_IMPORTANT_MINBID = -10;
+        public const int NOT_IMPORTANT_MAXBID = 40;
+
+
         public Player(int id, int gold, Mission[] missions) 
         {
             ID = id;
@@ -52,19 +58,25 @@ namespace LouvreCartes.Gameplay
 
         public int Bid(Card card)
         {
+            if(Gold == 0) return 0;
+
             Random random = new Random();
             int bid = 0;
 
-            Console.Write($"{card} is important for : ");
+            //Console.Write($"{card} is important for : ");
+            Console.WriteLine($"*** Is Important : {IsImportantForMissions(card)}");
             if (IsImportantForMissions(card))
             {
-                bid = random.Next(20, 70) + card.Prestige * 10;
+                bid = random.Next(IMPORTANT_MINBID, IMPORTANT_MAXBID) + card.Prestige * 10;
             }
             else
             {
-                bid = random.Next(-10, 40) + card.Prestige * 10;
+                bid = random.Next(NOT_IMPORTANT_MINBID, NOT_IMPORTANT_MAXBID) + card.Prestige * 10;
             }
 
+            // If too much bid, tapis
+            if (bid > Gold)
+                bid = Gold;
 
             return bid;
         }
@@ -74,7 +86,7 @@ namespace LouvreCartes.Gameplay
             foreach (Mission mission in Missions)
             {
                 bool val = mission.Criteria.IsImportant(mission, Cards, card);
-                Console.WriteLine($"{val} : {mission}");
+                //Console.WriteLine($"{val} : {mission}");
                 if (val)
                     return true;
             }

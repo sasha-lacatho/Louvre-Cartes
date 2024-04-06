@@ -21,25 +21,20 @@ namespace LouvreCartes
             //Console.WriteLine("Extracted data :");
             //Console.WriteLine(data);
 
-            //Console.WriteLine("data length " + data.Missions.Length);
-            //Console.WriteLine("data typemission 0 : " + data.Missions[0].TypeMission);
-
-
-            //Exemple
+            // 1 Game
             List<Card> cards = new List<Card>();
             for (int day = 0; day < Game.NUMBER_OF_DAYS; day++)
             {
-                Card card0 = game.Cards[day, 0];
-                Card card1 = game.Cards[day, 1];
-                Card card2 = game.Cards[day, 2];
-                cards.Add(card0);
-                cards.Add(card1);
-                cards.Add(card2);
+                for (int i = 0; i < Game.CARD_PER_DAY; i++)
+                {
+                    Card card = game.Cards[day, i];
+                    cards.Add(card);
+                }
             }
 
 
             Calcul testCalcul = new Calcul();
-            testCalcul.SimulateOneDay(game, cards);
+            testCalcul.SimulateOneGame(game, cards);
 
 
             Console.ReadLine();

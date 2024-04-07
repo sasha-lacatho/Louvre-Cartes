@@ -17,6 +17,10 @@ namespace LouvreCartes.Data
         public int Repeat;
         public MissionCriteria Criteria;
 
+        public WinRate WinRate;
+
+        public int ID;
+
         public override string ToString()
         {
             return $"{GetType().Name} : {Text} :\n - P.{Prestige}, T.{Type}, [X.{X}, Y.{Y}], R.{Repeat}";

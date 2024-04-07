@@ -15,6 +15,8 @@ namespace LouvreCartes.Data
         public int Date;
         public float Height;
 
+        public WinRate[] MissionWinRate;
+
         public override string ToString()
         {
             return $"{GetType().Name} : {Name} : P.{Prestige}, T.{Type}, L.{Location}, D.{Date}, H.{Height}";

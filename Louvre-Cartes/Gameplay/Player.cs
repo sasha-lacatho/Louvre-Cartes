@@ -32,7 +32,6 @@ namespace LouvreCartes.Gameplay
             Missions = missions;
         }
 
-        public bool GoldWinner;
         public int TotalPrestige;
 
         public override string ToString()
@@ -64,7 +63,7 @@ namespace LouvreCartes.Gameplay
             int bid = 0;
 
             //Console.Write($"{card} is important for : ");
-            Console.WriteLine($"*** Is Important : {IsImportantForMissions(card)}");
+            //Console.WriteLine($"*** Is Important : {IsImportantForMissions(card)}");
             if (IsImportantForMissions(card))
             {
                 bid = random.Next(IMPORTANT_MINBID, IMPORTANT_MAXBID) + card.Prestige * 10;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LouvreCartes.Data;
+using System.Diagnostics;
 
 namespace LouvreCartes.Export
 {
@@ -14,22 +15,25 @@ namespace LouvreCartes.Export
     {
         public void WriteAllToCSV(GameData data)
         {
-            string directoryPath = @"C:\Dataas";
+            string directoryPath = Directory.GetCurrentDirectory();
 
             // Missions Rates
             string fileName = $"DataLouvre - MissionRates.csv";
             string filePath = Path.Combine(directoryPath, fileName);
             WriteToCsv(filePath, data.WriteStatsMissionsRates());
+            Process.Start("notepad.exe", filePath);
 
             // Pair Rates
             fileName = $"DataLouvre - PairWinRates.csv";
             filePath = Path.Combine(directoryPath, fileName);
             WriteToCsv(filePath, data.WriteStatsPairRates());
+            Process.Start("notepad.exe", filePath);
 
             // Cards Rates
             fileName = $"DataLouvre - CardsWinRates.csv";
             filePath = Path.Combine(directoryPath, fileName);
             WriteToCsv(filePath, data.WriteStatsCardsRates());
+            Process.Start("notepad.exe", filePath);
         }
 
         void WriteToCsv<T>(string filePath, List<T> list)

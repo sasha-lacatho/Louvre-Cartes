@@ -1,12 +1,6 @@
 ﻿using LouvreCartes.Data;
 using LouvreCartes.Gameplay;
-using static System.Net.Mime.MediaTypeNames;
-using System.Diagnostics;
-using CsvHelper.Configuration;
-using CsvHelper;
-using System.Globalization;
-using System;
-using System.Reflection;
+using LouvreCartes.Export;
 
 namespace LouvreCartes
 {
@@ -19,7 +13,7 @@ namespace LouvreCartes
 
             Game game = new Game(data);
 
-
+            #region Simulate 60sec of Games
             int start = Environment.TickCount;
             int oneMinute = Environment.TickCount + (60 * 1000);
 
@@ -35,64 +29,16 @@ namespace LouvreCartes
                 Console.Write($"\r{gameCount}x games : {(Environment.TickCount - start) / 1000f}s");
             }
             Console.WriteLine($"\rDONE : {gameCount}x games played in 60s                                          ");
+            #endregion
 
-            //data.WriteStatistics();
-
-            //Console.ReadLine();
-
-
-            string directoryPath = @"C:\Dataas";
-
-            string fileName = $"dataLouvre1.csv";
-            string filePath = Path.Combine(directoryPath, fileName);
-            WriteToCsv(filePath, data.WriteStatsMissionsRates());
-            
-            fileName = $"dataLouvre2.csv";
-            filePath = Path.Combine(directoryPath, fileName);
-            WriteToCsv(filePath, data.WriteStatsPairRates());
-
-            fileName = $"dataLouvre3.csv";
-            filePath = Path.Combine(directoryPath, fileName);
-            WriteToCsv(filePath, data.WriteStatsCardsRates());
+            #region Export To CSV
+            ExportToCSV exportCSV = new ExportToCSV();
+            exportCSV.WriteAllToCSV(data);
+            #endregion
 
 
-
-            //ReadFromCsv(filePath);
             Console.ReadKey();
         }
 
-        static void WriteToCsv<T>(string filePath, List<T> list)
-        {
-            try
-            {
-                if (File.Exists(filePath))
-                {
-                    File.Delete(filePath);
-                }
-                using (File.Create(filePath)) { }
-
-
-                var configPersons = new CsvConfiguration(CultureInfo.InvariantCulture)
-                {
-                    HasHeaderRecord = false
-                };
-
-                using (StreamWriter streamWriter = new StreamWriter(filePath, true))
-                using (CsvWriter csvWriter = new CsvWriter(streamWriter, configPersons))
-                {
-                    csvWriter.WriteRecords(list);
-                }
-
-                Console.WriteLine("Data written to CSV successfully.");
-            }
-
-            catch (Exception ex)
-            {
-                throw;
-            }
-
-        }
     }
-
-
 }

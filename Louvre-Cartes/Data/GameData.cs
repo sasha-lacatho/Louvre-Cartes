@@ -57,7 +57,7 @@ namespace LouvreCartes.Data
             {
                 Console.WriteLine(card.ToString() + '\n');
 
-                foreach(Mission mission in Missions)
+                foreach (Mission mission in Missions)
                 {
                     Console.WriteLine($" - [{mission.Criteria.IsImportant(mission, new Card[0], card)}] ({mission.Criteria.GetType().Name}) {mission.Text}");
                 }
@@ -72,15 +72,38 @@ namespace LouvreCartes.Data
             Console.WriteLine("\n - Missions - \n");
 
             #region Mission WinRates
+            WriteStatsMissionsRates();
+            #endregion
+
+            Console.WriteLine("\n - Pairs - \n");
+
+            #region Pair WinRates
+            WriteStatsPairRates();
+            #endregion
+
+            Console.WriteLine("\n - Cards - \n");
+
+            #region Cards rates
+            WriteStatsCardsRates();
+            #endregion
+        }
+
+        public List<DataWinRatesToCSV> WriteStatsMissionsRates()
+        {
+            List<DataWinRatesToCSV> firstData = new List<DataWinRatesToCSV>();
             foreach (Mission mission in Missions.ToList().OrderBy(item => item.WinRate.Ratio))
             {
                 Console.WriteLine($" - {mission.WinRate.RatioText} {mission.Text}");
+                firstData.Add(new DataWinRatesToCSV { WinRatio = mission.WinRate.RatioText, Text1 = mission.Text });
             }
-            #endregion
-            
-            Console.WriteLine("\n - Pairs - \n");
-            
-            #region Pair WinRates
+
+            return firstData;
+        }
+
+        public List<DataWinRatesToCSV> WriteStatsPairRates()
+        {
+            List<DataWinRatesToCSV> secondData = new List<DataWinRatesToCSV>();
+
             //find and Order rates
             List<KeyValuePair<(Mission, Mission), WinRate>> pairRates = new List<KeyValuePair<(Mission, Mission), WinRate>>();
             for (int i = 0; i < Missions.Length; i++)
@@ -92,15 +115,19 @@ namespace LouvreCartes.Data
             }
 
             //print rates
-            foreach(KeyValuePair<(Mission, Mission), WinRate> item in pairRates.OrderBy(item => item.Value.Ratio))
+            foreach (KeyValuePair<(Mission, Mission), WinRate> item in pairRates.OrderBy(item => item.Value.Ratio))
             {
                 Console.WriteLine($" - {item.Value.RatioText} {item.Key.Item1.Text} /  {item.Key.Item2.Text}");
+                secondData.Add(new DataWinRatesToCSV { WinRatio = item.Value.RatioText, Text1 = item.Key.Item1.Text, Text2 = item.Key.Item2.Text });
             }
-            #endregion
 
-            Console.WriteLine("\n - Cards - \n");
+            return secondData;
+        }
 
-            #region Cards rates
+        public List<DataWinRatesToCSV> WriteStatsCardsRates()
+        {
+            List<DataWinRatesToCSV> thirdData = new List<DataWinRatesToCSV>();
+
             KeyValuePair<Mission, WinRate>[] cardRates = new KeyValuePair<Mission, WinRate>[Missions.Length];
             foreach (Card card in Cards)
             {
@@ -111,13 +138,26 @@ namespace LouvreCartes.Data
 
                 //print rates
                 Console.WriteLine($" - {card.Name} :");
+                thirdData.Add(new DataWinRatesToCSV { CardName = card.Name });
                 foreach (KeyValuePair<Mission, WinRate> item in cardRates.OrderBy(item => item.Value.Ratio))
                 {
                     Console.WriteLine($"   {item.Value.RatioText} {item.Key.Text}");
+                    thirdData.Add(new DataWinRatesToCSV { WinRatio = item.Value.RatioText, Text1 = item.Key.Text });
                 }
+
                 Console.WriteLine();
             }
-            #endregion
+
+            return thirdData;
         }
+    }
+
+
+    public class DataWinRatesToCSV
+    {
+        public string CardName { get; set; }
+        public string WinRatio { get; set; }
+        public string Text1 { get; set; }
+        public string Text2 { get; set; }
     }
 }
